@@ -1,11 +1,11 @@
-# simple-get [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
+# LAN-Chatroom
 
-[travis-image]: https://img.shields.io/travis/feross/simple-get/master.svg
-[travis-url]: https://travis-ci.org/feross/simple-get
-[npm-image]: https://img.shields.io/npm/v/simple-get.svg
-[npm-url]: https://npmjs.org/package/simple-get
-[downloads-image]: https://img.shields.io/npm/dm/simple-get.svg
-[downloads-url]: https://npmjs.org/package/simple-get
+[travis-image]: https://img.shields.io/travis/feross/LAN-Chatroom/master.svg
+[travis-url]: https://travis-ci.org/feross/LAN-Chatroom
+[npm-image]: https://img.shields.io/npm/v/LAN-Chatroom.svg
+[npm-url]: https://npmjs.org/package/LAN-Chatroom
+[downloads-image]: https://img.shields.io/npm/dm/LAN-Chatroom.svg
+[downloads-url]: https://npmjs.org/package/LAN-Chatroom
 [standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg
 [standard-url]: https://standardjs.com
 
@@ -27,7 +27,7 @@ All this in < 100 lines of code.
 ## install
 
 ```
-npm install simple-get
+npm install LAN-Chatroom
 ```
 
 ## usage
@@ -39,7 +39,7 @@ Note, all these examples also work in the browser with [browserify](http://brows
 Doesn't get easier than this:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 get('http://example.com', function (err, res) {
   if (err) throw err
@@ -53,7 +53,7 @@ get('http://example.com', function (err, res) {
 If you just want the data, and don't want to deal with streams:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 get.concat('http://example.com', function (err, res, data) {
   if (err) throw err
@@ -67,7 +67,7 @@ get.concat('http://example.com', function (err, res, data) {
 For `POST`, call `get.post` or use option `{ method: 'POST' }`.
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 const opts = {
   url: 'http://example.com',
@@ -82,14 +82,14 @@ get.post(opts, function (err, res) {
 #### A more complex example:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 get({
   url: 'http://example.com',
   method: 'POST',
   body: 'this is the POST body',
 
-  // simple-get accepts all options that node.js `http` accepts
+  // LAN-Chatroom accepts all options that node.js `http` accepts
   // See: http://nodejs.org/api/http.html#http_http_request_options_callback
   headers: {
     'user-agent': 'my cool app'
@@ -117,7 +117,7 @@ get({
 You can serialize/deserialize request and response with JSON:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 const opts = {
   method: 'POST',
@@ -140,7 +140,7 @@ If the request takes longer than `timeout` to complete, then the entire request
 will fail with an `Error`.
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 const opts = {
   url: 'http://example.com',
@@ -156,7 +156,7 @@ It's a good idea to set the `'user-agent'` header so the provider can more easil
 see how their resource is used.
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 const pkg = require('./package.json')
 
 get('http://example.com', {
@@ -172,7 +172,7 @@ You can use the [`tunnel`](https://github.com/koichik/node-tunnel) module with t
 `agent` option to work with proxies:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 const tunnel = require('tunnel')
 
 const opts = {
@@ -193,7 +193,7 @@ You can use the [`cookie`](https://github.com/jshttp/cookie) module to include
 cookies in a request:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 const cookie = require('cookie')
 
 const opts = {
@@ -213,7 +213,7 @@ create POST request with form data:
 
 ```js
 const fs = require('fs')
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 const FormData = require('form-data')
 const form = new FormData()
 
@@ -230,7 +230,7 @@ get.post(opts, function (err, res) {})
 #### Or, include `application/x-www-form-urlencoded` form data manually:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 const opts = {
   url: 'http://example.com',
@@ -244,7 +244,7 @@ get.post(opts, function (err, res) {})
 ### Specifically disallowing redirects
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 
 const opts = {
   url: 'http://example.com/will-redirect-elsewhere',
@@ -274,7 +274,7 @@ You can use the [`oauth-1.0a`](https://github.com/ddo/oauth-1.0a) module to crea
 a signed OAuth request:
 
 ```js
-const get = require('simple-get')
+const get = require('LAN-Chatroom')
 const crypto  = require('crypto')
 const OAuth = require('oauth-1.0a')
 
@@ -308,7 +308,7 @@ get(opts, function (err, res) {})
 You can use [limiter](https://github.com/jhurliman/node-rate-limiter) to throttle requests. This is useful when calling an API that is rate limited.
 
 ```js
-const simpleGet = require('simple-get')
+const simpleGet = require('LAN-Chatroom')
 const RateLimiter = require('limiter').RateLimiter
 const limiter = new RateLimiter(1, 'second')
 
